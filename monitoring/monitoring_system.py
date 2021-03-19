@@ -201,7 +201,7 @@ if __name__ == "__main__":
     #t1 = threading.Thread(target=simu_test, args=())
     #t1.start()
     
-    Monit = Monitor("XPBIO100")
+    Monit = Monitor("")
     Monit.start_monitoring()
     
     
@@ -224,93 +224,7 @@ if __name__ == "__main__":
    
     
    
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
 
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-
-
-"""def simu_test():
-    
-    #Getting the test data
-    data_lines = np.array([])
-    
-    with open('test_monit1.txt') as f:
-        data_lines = np.append(data_lines, f.read().splitlines())
-        
-    temp = np.array([])
-    hr = np.array([])
-    sp = np.array([])
-    bat = np.array([])
-    
-    
-    for line in data_lines:
-        
-        a = line.split()
-        temp = np.append(temp, float(a[0]))
-        hr = np.append(hr, float(a[1]))
-        sp = np.append(sp, float(a[2]))
-        bat = np.append(bat, int(a[3]))
-
-
-    host="influx.biomed.ulb.ovh"
-    db="biomed1"
-    username='biomed1'
-    password='M5xsTyS4fS0EYsFN'
-    client = InfluxDBClient(host=host, port=80, username=username, password=password, database=db)
-    
-    line="Monitest1,name=Bob,surname=McBob,mail=oyo@rempli.com resp=1"
-    client.write_points(line, protocol='line')
-    
-    
-    
-    
-    for i in range(len(hr)):
-        client.write_points('Monitest1,name=Bob temperature={},hr={},spo2={},battery={},resp=2'.format(temp[i],hr[i],sp[i],bat[i]),protocol='line')
-        time.sleep(2)
-        print("Sent!\n")
-        
-        
-    print("All of the data have been sent!\n")"""
-    
-    
-    
-    
-    
-
-
-
-
-    
-    
     
 
 

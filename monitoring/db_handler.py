@@ -8,15 +8,6 @@ import numpy as np
 import time
 
 
-"""
-# Database settings
-host="influx.biomed.ulb.ovh"
-db="biomed1"
-username='biomed1'
-password='M5xsTyS4fS0EYsFN'
-client = InfluxDBClient(host=host, port=80, username=username, password=password, database=db)
-"""
-    
 
 
 class DataHandler(InfluxDBClient): 
@@ -24,10 +15,10 @@ class DataHandler(InfluxDBClient):
 
     def __init__(self, measurementName):
         # Database settings and connection
-        __host="influx.biomed.ulb.ovh"
-        __db="biomed1"
-        __username='biomed1'
-        __password='M5xsTyS4fS0EYsFN'
+        __host=""
+        __db=""
+        __username=''
+        __password=''
         __port=80
         super().__init__(host=__host, port=__port, username=__username, password=__password, database=__db)
         
@@ -148,52 +139,3 @@ class DataHandler(InfluxDBClient):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#Some notes
-
-
-
-"""
-k = list(client.query("Select exponential_moving_average(*,100) from Pourcentage").get_points())
-o = []
-for i in range(len(k)):
-    o.append(k[i]['exponential_moving_average_PourcentageBATTERIE'])
-
-SELECT last(value) FROM response_times WHERE time > now() - 1h
-db = DataHandler('Nocturne')
-
-
-db.query('DROP SERIES from Nocturne')
-SELECT last(value) FROM response_times WHERE time > now() - 1h
-
-
-line="Nocturne,name=Bob,surname=McBob,mail=oyo@rempli.com resp=1"
-db.write_points(line, protocol='line')
-
-
-monit.db.write_points('Nocturne,name=Bob temperature=37,hr=68,spo2=97,resp=2',protocol='line')
-
-line="Nocturne,name=Bob,surname=McBob,mail=oyo@rempli.com resp=1"
-client.write_points(line, protocol='line')
-client.write_points('Nocturne,name=Bob temperature=37,hr=68,spo2=97,battery=87 resp=2',protocol='line')
-
-
-
-https://docs.influxdata.com/influxdb/v1.8/query_language/explore-data/
-"""

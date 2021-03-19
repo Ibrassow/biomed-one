@@ -129,7 +129,7 @@ class Alert:
                 alrt_msg.append(alrt_temp)
                 print("DANGEROUS TEMPERATURE !")
             elif temp_flag == LEVEL2:
-                if self.check_temp(list_temp[1]) == LEVEL2 or self.check_temp(list_temp[1]) == LEVEL2:
+                if self.check_temp(list_temp[1]) == LEVEL1 or self.check_temp(list_temp[1]) == LEVEL2:
                     alrt_temp = self.__get_alert_msg('temperature', temp_flag)
                     alrt_msg.append(alrt_temp)
                 else:
@@ -189,7 +189,10 @@ class Alert:
 
 
 
-    def check_temp(self):
+    def check_temp(self, temp_eval = None):
+        
+        if temp_eval == None: #allow to test other spo2 values
+            temp_eval = self.patient.temperature
         
         if self.patient.temperature <= 35 or self.patient.temperature >= 41:
             return OUTLIER
@@ -221,7 +224,10 @@ class Alert:
             
             
 
-    def check_hr(self):
+    def check_hr(self, hr_eval = None):
+        
+        if hr_eval == None: #allow to test other spo2 values
+            hr_eval = self.patient.hr
             
         if self.patient.hr <= 40 or self.patient.hr >= 160:
             return OUTLIER
@@ -232,7 +238,7 @@ class Alert:
         elif self.patient.hr < HR_MIN: #Low heart rate - This excludes trained people
             return LEVEL3
         else: #Hr is within range
-            return OK    
+            return OK      
       
     def check_battery(self):
         
@@ -254,8 +260,8 @@ class AlertSender:
     
     def __init__(self, recipient):
         
-        self.sender = "biomed1.monitoring@gmail.com"
-        self.password = "projet_BA2"
+        self.sender = ""
+        self.password = ""
         self.recipient = recipient
 
 
@@ -273,19 +279,7 @@ class AlertSender:
 
 
 
-if __name__ == "__main__": 
-    
-        
-    obbi = Patient('Obi', 'Wan', 'ibrahimasow2001@live.fr', 15, "male", "RFG8795")
-    dictotest = { 'last_temperature' : 37, 'last_hr' : 85, 'last_spo2' : 91, 'last_battery' : 45, 'time' : 246248, 'last_rssi' : -50} 
-    obbi.update_state(dictotest)
-    sys_alt = Alert(obbi)
 
-    #sys_alt.short_analysis() #attention ça envoie
-    time.sleep(5)
-    dictotest = { 'last_temperature' : 37, 'last_hr' : 85, 'last_spo2' : 91, 'last_battery' : 45, 'time' : 246248, 'last_rssi' : -50}
-    obbi.update_state(dictotest)
-    sys_alt.danger_analysis([92,92,92], [37,37,37], [70,70,70])
 
 
         
