@@ -1,0 +1,8 @@
+                  Settings 
+
+1. Patient parameters
+2. Simulator configuration
+3. Start
+4. Back
+
+Type the NUMBER of your choice and press ENTER..

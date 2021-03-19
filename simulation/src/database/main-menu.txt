@@ -1,0 +1,9 @@
+                  Main Menu 
+
+1. Start a new simulation
+2. Exit
+
+Yolo
+
+
+Type the NUMBER of your choice and press ENTER..

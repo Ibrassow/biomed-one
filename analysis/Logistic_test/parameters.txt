@@ -1,0 +1,5 @@
+heigth 2.
+total_duration_h 10.
+transition_period_h 3
+recovery_period_h 5
+reverse_dir false
