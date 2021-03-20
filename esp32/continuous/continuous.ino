@@ -92,10 +92,10 @@ String info_add_ = "";
 
 
 // -- InfluxDB
-#define INFLUXDB_URL "http://influx.biomed.ulb.ovh"
-#define INFLUXDB_DB_NAME "biomed1"
-#define INFLUXDB_DB_USERNAME "biomed1"
-#define INFLUXDB_DB_PASSWORD "M5xsTyS4fS0EYsFN"
+#define INFLUXDB_URL ""
+#define INFLUXDB_DB_NAME ""
+#define INFLUXDB_DB_USERNAME ""
+#define INFLUXDB_DB_PASSWORD ""
 InfluxDBClient Iclient(INFLUXDB_URL, INFLUXDB_DB_NAME);
 
 RTC_DATA_ATTR int personalData_sent = 0;
