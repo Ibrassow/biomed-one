@@ -143,10 +143,10 @@ class DataHandler(InfluxDBClient):
 
     def __init__(self, measurementName):
         # Database settings and connection
-        __host="influx.biomed.ulb.ovh"
-        __db="biomed1"
-        __username='biomed1'
-        __password='M5xsTyS4fS0EYsFN'
+        __host=""
+        __db=""
+        __username=''
+        __password=''
         __port=80
         super().__init__(host=__host, port=__port, username=__username, password=__password, database=__db)
         self.measurement = measurementName
