@@ -34,7 +34,7 @@ LEVEL3 = 3
 OUTLIER = 4
 OK = 5
 
-
+MEDICAL_TEAM_MAIL = ""
 
 class Alert:    
     
@@ -42,6 +42,7 @@ class Alert:
     def __init__(self, _Patient):
         self.patient = _Patient 
         self.mail_sender = AlertSender(self.patient.mail)
+        self.main_sender_med_team = AlertSender(MEDICAL_TEAM_MAIL)
         self.battery_alert_status = 0
         
       
@@ -146,7 +147,7 @@ class Alert:
         
         if len(alrt_msg) != 0:
             mm = self.craft_msg_med(alrt_msg)
-            self.mail_sender.send(mm[0], mm[1])
+            self.mail_sender_med_team.send(mm[0], mm[1])
             print("... DANGER Alert sent!")
 
         

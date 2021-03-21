@@ -179,10 +179,6 @@ class Monitor:
         
         
     def __mild_analysis(self):
-        
-        while True: #must start at least 20min after to get a "correct" mean ==>in the start monitoring
-            
-            time.sleep(600)
         pass
 
     
