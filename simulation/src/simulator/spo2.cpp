@@ -61,16 +61,16 @@ void SPO2::GenerateTimeSeries()
                 
                 if (randomnizer())
                 {
-                    spo2_series[i] = spo2_series[i - 1] + *it_w;
+                    spo2_series[i] = spo2_series[i - 1]; // +*it_w;
                 }
                 else
                 {
                     spo2_series[i] = GetSafeValue() + *it_w;; //model_interval
                 }
                 //recalculates the mean after 1 hour
-                if (i % 3600 == 0) {
+                /*if (i % 3600 == 0) {
                     CalculateNewMean(i);
-                }
+                }*/
 
                 ++it_w;
             }
@@ -205,13 +205,13 @@ void SPO2::CalculateNewMean(int i)
 ///Need a fonction to determine the mean
 
 
-void SPO2::aggrave(double spo2_max, int start_h, int total_duration_h, int transition_period_h, int recovery_period_h) {
+void SPO2::aggrave(double spo2_min, int start_h, int total_duration_h, int transition_period_h, int recovery_period_h) {
 
     worsen = true;
     aggravation_start_h = start_h;
-    double k_heigth = spo2_max - spo2_mean;
+    double k_heigth = spo2_min - spo2_mean;
 
-    AggravModel = new AggravatorModel(k_heigth, total_duration_h, transition_period_h, recovery_period_h, false);
+    AggravModel = new AggravatorModel(k_heigth, total_duration_h, transition_period_h, recovery_period_h, true);
 
 
 }

@@ -66,7 +66,7 @@ vec1D AggravatorModel::logistic_model(double duration_h, double sign_evolution) 
 
     double M_shift = duration_h * 3600 / 2;
 
-    double charac_time = variation_direction * sign_evolution * duration_h * 3600; 
+    double charac_time =  sign_evolution * duration_h * 3600; //variation_direction *
 
     double gr = std::log(9801); // 1% to 99%
 
@@ -83,7 +83,7 @@ vec1D AggravatorModel::create_constant_phase() {
 
     double HH;
 
-    if (variation_direction == -1.) {
+    /*if (variation_direction == -1.) {
 
         HH = 0;
 
@@ -91,10 +91,11 @@ vec1D AggravatorModel::create_constant_phase() {
     }
     else {
         HH = K_heigth;
-    }
+    }*/
+
+    HH = K_heigth;
 
     vec1D points((static_cast<int> (constant_phase_duration)) * 3600, HH);
-    //vec1D points((static_cast<int> (constant_phase_duration)) * 60, hh);
 
     return points;
 };
