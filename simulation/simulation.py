@@ -21,7 +21,7 @@ from influxdb import InfluxDBClient
 
 
 class Simulator:
-    def __init__(self, age=20, total_duration=2, DBname):
+    def __init__(self, total_duration, age, DBname):
         self.age = age
         self.total_duration_simu = total_duration
         self.filename = "config.txt"
@@ -85,12 +85,28 @@ class Simulator:
         
         with open(self.filename, 'w') as file:
             
-            config_info = [self.age, self.total_duration_simu, self.fever, self.resp_trb, self.severity, self.start_h, \
-                           self.total_duration_h, self.transition_period_h, self.recovery_period]
+            
+            config_info = {
+                
+                "age" : self.age,
+                "duration" : self.total_duration_h,
+                "fever" : self.resp_trb, 
+                "severity" : self.severity,
+                "start_h" : self.start_h,
+                "total_duration_h" : self.total_duration_h,
+                "transition_period_h" : self.transition_period_h,
+                "recovery_period_h" : self.recovery_period
+
+                }
+            
+            
+            #config_info = [self.age, self.total_duration_simu, self.fever, self.resp_trb, self.severity, self.start_h, \
+                           #self.total_duration_h, self.transition_period_h, self.recovery_period]
             
             
             for elem in config_info:
-                file.write(str(elem) + '\n')
+                #file.write(str(elem) + '\n')
+                file.write(str(elem) + " = " + str(config_info[elem]) + '\n')
         
 
     def launchSimulation(self):
@@ -102,14 +118,14 @@ class Simulator:
         #os.system("start simulation.exe")
         self.simu_running.set()
         print("Check your folder => results_simu.txt and your variables :) ")
-        getFullData()
+        self.getFullData()
 
 
     def print_waiting_msg(self):
         
         while not self.simu_running.is_set():
             print("Waiting for the generator to finish...")
-            time.sleep(1)
+            time.sleep(5)
             
 
     
