@@ -4,7 +4,6 @@
 #include <string>
 #include <random>
 #include <chrono>
-#include <Windows.h>
 #include <iterator>
 
 typedef std::string String;
