@@ -1,9 +1,0 @@
-age = 17
-duration = 10
-fever = true
-resp_trbl = false
-severity = 2
-start_h = 0
-total_duration_h = 6
-transition_period_h = 2
-recovery_period_h = 3

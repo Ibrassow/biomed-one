@@ -8,8 +8,8 @@ Config::Config() : config_file_name("config.txt"), settings{} {
 
 
 int Config::changeString2Bool(std::string var) {
-    if ((var == "true") or (var == "True")) { return true; }
-    else if ((var == "false") or (var == "False")) { return false; }
+    if ((var == "true") || (var == "True")) { return true; }
+    else if ((var == "false") || (var == "False")) { return false; }
 }
 
 void Config::loadConfig() {

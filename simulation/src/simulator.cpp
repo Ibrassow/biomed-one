@@ -1,12 +1,11 @@
-#include "include/simulator.h"
-#include "simulation.h"
-#include "typevector.h"
+#include "simulator.h"
+#include "model/simulation.h"
+#include "model/typevector.h"
 #include <string>
 #include <random>
 #include <chrono>
 #include <Windows.h>
 #include <iterator>
-
 
 typedef std::string String;
 
@@ -68,7 +67,7 @@ void Simulator::loadSettings() {
 		else if (itr->first == "duration") {
 			simulation_duration_h = itr->second;
 		}
-		else if ((itr->first == "fever") or (itr->first == "resp_trbl")) {
+		else if ((itr->first == "fever") || (itr->first == "resp_trbl")) {
 
 			if (itr->second == true) {
 				activateAggravator(settings["fever"], settings["resp_trb"], settings["severity"], settings["start_h"], settings["total_duration_h"],
@@ -178,6 +177,5 @@ void Simulator::activateAggravator(bool fever, bool resp_trbl, int severity, int
 
 
 };
-
 
 

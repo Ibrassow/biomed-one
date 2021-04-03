@@ -1,11 +1,12 @@
 #pragma once
 
-#include "hr.h"
-#include "spo2.h"
-#include "temperature.h"
+#include "model/hr.h"
+#include "model/spo2.h"
+#include "model/temperature.h"
+#include "config.h"
 #include <fstream>
 
-
+#include <map>
 
 
 class Simulator {
@@ -17,18 +18,15 @@ public:
 	Simulator(int age, int entire_duration, std::string filename);
 
 
+	void start(); 
 
-	/*
-		Start the entire simulator
-		@param XXXX
-	*/
-	void start();
+	void loadSettings();
 
-
-	void pause();
+	//void pause();
 
 
-	void stop();
+	//void stop();
+
 
 
 	void activateAggravator(bool fever, bool resp_trbl, int severity, int start_h, int total_duration_h, int transition_period_h, int recovory_period_h);
@@ -42,14 +40,19 @@ private:
 
 	//std::string gender;
 
-	int simulation_duration_h;
+	std::map<std::string, int> settings;
 
+	int age;
+
+	int simulation_duration_h;
 
 	HR HRGen;
 	Temperature TemperatureGen;
 	SPO2 SpO2Gen;
 
 	std::fstream resultsFileHandler;
+
+	Config config;
 
 
 
