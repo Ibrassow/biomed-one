@@ -72,14 +72,14 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\ibrah\OneDrive - Université Libre de Bruxelles\Polytech\BA2\Projet BA2 - BIOMED\CODE\biomed_project\simulation;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\ibrah\OneDrive\Desktop\jpp\simulation;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\ibrah\OneDrive - Université Libre de Bruxelles\Polytech\BA2\Projet BA2 - BIOMED\CODE\biomed_project\simulation;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\ibrah\OneDrive\Desktop\jpp\simulation;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -143,31 +143,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\menu.cpp" />
-    <ClCompile Include="src\simulator\hr.cpp" />
-    <ClCompile Include="src\simulator\simulation.cpp" />
-    <ClCompile Include="src\simulator\simulator.cpp" />
-    <ClCompile Include="src\simulator\spo2.cpp" />
-    <ClCompile Include="src\simulator\temperature.cpp" />
-    <ClCompile Include="src\simulator\utilities\fft.cpp" />
-    <ClCompile Include="src\simulator\utilities\tools.cpp" />
-    <ClCompile Include="tests\interface_testing.cpp" />
+    <ClCompile Include="src\config.cpp" />
+    <ClCompile Include="src\hr.cpp" />
+    <ClCompile Include="src\simulation.cpp" />
+    <ClCompile Include="src\simulator.cpp" />
+    <ClCompile Include="src\spo2.cpp" />
+    <ClCompile Include="src\temperature.cpp" />
+    <ClCompile Include="src\utilities\fft.cpp" />
+    <ClCompile Include="src\utilities\tools.cpp" />
     <ClCompile Include="tests\simu_testing.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\menu.h" />
-    <ClInclude Include="src\simulator\hr.h" />
-    <ClInclude Include="src\simulator\simulation.h" />
-    <ClInclude Include="src\simulator\simulator.h" />
-    <ClInclude Include="src\simulator\spo2.h" />
-    <ClInclude Include="src\simulator\temperature.h" />
-    <ClInclude Include="src\simulator\typevector.h" />
-    <ClInclude Include="src\simulator\utilities\fft.h" />
-    <ClInclude Include="src\simulator\utilities\tools.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="src\database\main-menu.txt" />
-    <Text Include="src\database\simu-settings.txt" />
+    <ClInclude Include="config.h" />
+    <ClInclude Include="include\simulator.h" />
+    <ClInclude Include="src\hr.h" />
+    <ClInclude Include="src\simulation.h" />
+    <ClInclude Include="src\spo2.h" />
+    <ClInclude Include="src\temperature.h" />
+    <ClInclude Include="src\typevector.h" />
+    <ClInclude Include="src\utilities\fft.h" />
+    <ClInclude Include="src\utilities\tools.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,11 +1,7 @@
-#include "src/simulator/temperature.h"
-#include "src/simulator/utilities/tools.h"
 
-#include "src/simulator/simulation.h"
-#include "src/simulator/simulator.h"
+#include "include/simulator.h"
 
 #include <iostream>
-
 #include <fstream>
 
 
@@ -17,7 +13,7 @@
 int main() {
 
 
-	std::vector<std::string> answer;
+	/*std::vector<std::string> answer;
 
 	std::fstream file("config.txt", std::ios::in);
 	std::string str;
@@ -29,9 +25,6 @@ int main() {
 		std::cout << str << std::endl;
 	}
 
-
-
-	
 	int age = std::stoi(answer[0]);
 	int duration_t = std::stoi(answer[1]);
 	
@@ -43,35 +36,15 @@ int main() {
 	int start = std::stoi(answer[5]);
 	int tot_dur = std::stoi(answer[6]);
 	int trans_p = std::stoi(answer[7]);
-	int recov_p = std::stoi(answer[8]);
+	int recov_p = std::stoi(answer[8]);*/
 
-	Simulator mainSimu(age, duration_t, "results_simu.txt");
-	mainSimu.activateAggravator(fever, resp_trb, severity, start, tot_dur, trans_p, recov_p);
-
-
+	//Simulator mainSimu(age, duration_t, "results_simu.txt");
+	//mainSimu.activateAggravator(fever, resp_trb, severity, start, tot_dur, trans_p, recov_p);
+	Simulator mainSimu(14, 22, "results_simu.txt");
+	mainSimu.loadSettings();
 
 	mainSimu.start();
 
-
-
-
-
-
-
-	//std::fstream myFile_Handler("results_simu.txt", std::ios::out);
-	/*vec1D TT = mainSimu.giveHRSeries();
-	int sz = TT.size();
-
-
-
-	for (unsigned int i = 0; i < sz; i++) {
-
-		myFile_Handler << TT[i] << std::endl;
-	}
-
-
-
-	myFile_Handler.close();*/
 
 
 	return 0;

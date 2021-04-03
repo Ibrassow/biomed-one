@@ -15,72 +15,61 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="tests\interface_testing.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\menu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\simulator\hr.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\simulator\simulator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\simulator\spo2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\simulator\temperature.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\simulator\utilities\fft.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\simulator\utilities\tools.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="tests\simu_testing.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\simulator\simulation.cpp">
+    <ClCompile Include="src\hr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\simulation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\simulator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\spo2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\temperature.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utilities\fft.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utilities\tools.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\config.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\menu.h">
+    <ClInclude Include="src\hr.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\simulator\hr.h">
+    <ClInclude Include="src\simulation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\simulator\simulator.h">
+    <ClInclude Include="src\spo2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\simulator\spo2.h">
+    <ClInclude Include="src\temperature.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\simulator\temperature.h">
+    <ClInclude Include="src\typevector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\simulator\typevector.h">
+    <ClInclude Include="src\utilities\fft.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\simulator\utilities\fft.h">
+    <ClInclude Include="src\utilities\tools.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\simulator\utilities\tools.h">
+    <ClInclude Include="include\simulator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\simulator\simulation.h">
+    <ClInclude Include="config.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="src\database\simu-settings.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-    <Text Include="src\database\main-menu.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
   </ItemGroup>
 </Project>
