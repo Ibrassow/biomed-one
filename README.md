@@ -8,7 +8,16 @@ BiomedOne is a three-part monitoring system for people quarantined due to COVID-
 ## Simulator
 
 ### Usage
-
+```
+$ git clone https://github.com/Ibrassow/biomed-one.git
+$ cd biomed-one/simulation
+$ mkdir build 
+$ cd build
+$ cmake ..
+$ cmake --build .
+$ cd ../python
+$ python test1.py 
+```
 
 
 ## Alert system
