@@ -14,7 +14,7 @@ $ cd biomed-one/simulation
 $ mkdir build 
 $ cd build
 $ cmake ..
-$ cmake --build .
+$ cmake --build . --config Release //Windows
 $ cd ../python
 $ python test1.py 
 ```
